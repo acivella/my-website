@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Reset default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+    font-family: 'Rubik', sans-serif;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 40px 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(	86, 182, 230, 0.5);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+p {
+    font-family: 'Rubik', sans-serif;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h1 {
+    padding: 5px;
+}
+
+h2 {
+    margin-top: 10px;
+    font-size: larger;
+}
+
+/* Header styles */
+header {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation styles */
+nav {
+    text-align: center;
+    align-items: center;
+    border-bottom: 3px solid #dc402f;
+    overflow: hidden;
+    padding: 3px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav li {
+    margin: auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+nav a:hover {
+    color: #dc402f;
+}
+
+.head {
+    display: grid;
+    height: 100%;
+    background-color: black;
+    position: relative;
+}
+
+.willie {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 65%;
+    border-color: #dc402f;
+    box-shadow: 0 0 20px 10px #dc402f;
+    position: absolute;
+    margin-left: 60px;
+    margin-top: 240px;
+    z-index: 1;
+    overflow: visible;
+}
+.memory {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 65%;
+    border-color: #dc402f;
+    box-shadow: 0 0 25px 5px #dc402f;
+    position: absolute;
+    margin-left: 180px;
+    margin-top: 305px;
+    z-index: 1;
+    overflow: visible;
+}
+.banner {
+    max-width: 100%;
+    max-height: 95vh;
+    margin: auto;
+    position: relative;
+    border-bottom: 3px solid #dc402f;
+}
+
+.main-content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+.intro-section {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 0 auto;
+}
+
+.intro {
+    vertical-align: center;
+    padding: 10px;
+}
+
+.home-text {
+    justify-content: center;
+    text-align: center;
+    background: #dc402f;
+    color: white;
+    max-width: fit-content;
+    padding: 5px;
+    margin-bottom: 25px;
+}
+
+.home-text a {
+    text-decoration-thickness: 1px;
+    color: white;
+}
+
+.home-gallery-section {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10px 10px;
+}
+
+.home-gallery-section img {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    object-fit: cover;
+    object-position: 0% -1%;
+    border-radius: 5px;
+}
+
+.home-gallery-section::after {
+    content: "";
+    width: 350px;
+}
+
+.about {
+    padding-bottom: 10px;
+    width: 85%;
+    justify-content: center;
+}
+
+.gallery-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* three equal-width columns */
+    gap: 20px; /* Adjust the gap between images */
+    align-items: start;
+}
+
+.gallery-section img {
+    width: 100%; /* Ensure images fill their respective grid cells */
+    height: auto; /* Allow images to maintain aspect ratio */
+    max-height: 300px; /* Set maximum height for images */
+    object-fit: cover; /* Ensure images cover the entire grid cell */
+    border-radius: 5px; /* Add rounded corners if desired */
+    object-position: 0% 10%;
+}
+
+.willfan {
+    justify-self: center;
+    align-self: center;
+}
+
+
+.fbtest {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch; /* Adjusted to stretch items to the same height */
+}
+
+.facebook,
+.testimonials {
+    flex: 1; /* Adjusted to make both boxes flexible */
+    padding: 10px;
+    margin: auto;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    min-width: 300px; /* Ensure a minimum width */
+    max-width: 45%; /* Limit the maximum width */
+    min-height: fit-content;
+}
+
+.checked {
+    color: gold;
+}
+
+.left {
+    justify-content: left;
+    text-align: left;
+    max-width: 75%;
+    margin-left: 60px;
+    padding: 3px;
+}
+
+.right {
+    justify-content: right;
+    text-align: right;
+    max-width: 100%;
+    margin-right: 60px;
+    padding: 3px;
+}
+
+.center-text {
+    font-size: large;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    z-index: 1;
+}
+
+.floating-images {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    z-index: 0;
+}
+
+.floating-images img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.floating-images img:hover {
+    transform: scale(1.1);
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.map-section {
+    padding: 5px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    flex-direction: row;
+}
+
+.contact h2, .contact p {
+    margin: 0;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 7px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    color: black;
+    background-color: #fff;
+    border-top: 3px solid #dc402f;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+        margin: auto;
+        border: none;
+    }
+
+    .willie, .memory {
+        justify-self: center;
+        max-height: 50%;
+        max-width: 60%;
+        position: relative; /* Change to relative positioning */
+        top: 25px; /* Reset top property */
+        margin-top: 30px; /* Adjust margin for smaller screens */
+        margin-bottom: -150px;
+    }
+
+    .memory {
+        justify-self: center;
+        max-width: 16%;
+        max-height: 30%;
+        position: absolute;
+        left: -25px; /* Adjust position relative to willie */
+        top: 230px;
+        z-index: 1;
+        margin-bottom: -155px;
+    }
+
+    .banner {
+        content:url(https://i.postimg.cc/8zTfM9DH/Original-Wild-Willies-1.gif);
+        border: none;
+        transform: scale(1.03);
+        width: 100%;
+        height: 118%;
+        justify-items: center;
+
+    }
+
+    .head {
+        border-bottom: 5px solid #dc402f;
+        border-top: 3px solid #dc402f;
+        overflow: hidden;
+    }
+
+    .main-content,
+    .intro-section,
+    .home-gallery-section,
+    .fbtest {
+        flex-direction: column;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .home-text {
+        max-width: 100%;
+    }
+
+    .center-text {
+        max-width: 100%;
+    }
+
+    .contact {
+        flex-direction: column; /* Change to column for mobile screens */
+        gap: 5px; /* Adjust gap for mobile */
+    }
+
+    .facebook {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .facebook,.facebook iframe,
+    .testimonials,
+    .left,
+    .right {
+        width: 95%; /* Ensure full width on mobile */
+        max-width: none; /* Remove max-width restriction */
+        margin-left: 0; /* Reset left margin */
+        margin-right: 0; /* Reset right margin */
+        vertical-align: center;
+    }
+
+}
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .gallery-section {
+        grid-template-columns: 1fr; /* Switch to single column layout */
+    }
+
+    .gallery-section img {
+        max-height: 400px; /* Increase maximum height for images on smaller screens */
+    }
+}
