@@ -341,7 +341,7 @@ footer {
         max-height: 30%;
         position: absolute;
         left: -25px; /* Adjust position relative to willie */
-        top: 230px;
+        top: 215px;
         z-index: 1;
         margin-bottom: -155px;
     }
