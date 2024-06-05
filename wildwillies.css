@@ -393,7 +393,8 @@ footer {
     .facebook,.facebook iframe,
     .testimonials,
     .left,
-    .right {
+    .right,
+    .home-gallery-section img {
         width: 95%; /* Ensure full width on mobile */
         max-width: none; /* Remove max-width restriction */
         margin-left: 0; /* Reset left margin */
