@@ -405,7 +405,8 @@ footer {
 }
 /* Media query for smaller screens */
 @media (max-width: 768px) {
-    .gallery-section {
+    .gallery-section,
+    .home-gallery-section {
         grid-template-columns: 1fr; /* Switch to single column layout */
     }
 
