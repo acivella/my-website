@@ -405,4 +405,6 @@ footer {
         padding: 0;
         justify-content: center;/* Ensure it fits within the viewport with padding */
     }
+    .contact h1 {
+        font: 20px;
 }
