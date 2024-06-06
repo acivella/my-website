@@ -360,6 +360,10 @@ footer {
     .contact {
         flex-direction: column; /* Change to column for mobile screens */
         gap: 5px; /* Adjust gap for mobile */
+        padding: 0px; /* Reduce padding */
+        margin: 2px;
+        align-self: center;
+        vertical-align: center;
     }
 
     .facebook {
