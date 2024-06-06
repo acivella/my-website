@@ -374,6 +374,7 @@ footer {
         margin-left: 0; /* Reset left margin */
         margin-right: 0; /* Reset right margin */
         vertical-align: center;
+        justify-self: center;
     }
 
 }
@@ -384,7 +385,7 @@ footer {
         grid-template-columns: 1fr; /* Switch to single column layout */
     }
 
-    .gallery-section img {
+    .gallery-section img, .home-gallery-section {
         max-height: 400px; /* Increase maximum height for images on smaller screens */
     }
 }
@@ -398,10 +399,9 @@ footer {
         margin: 0;
         overflow-wrap: break-word;
         white-space:normal;
+        font-size:0.8em;
     }
-    .contact h2 {
-        font: 16px;
-}
+
 
 @media (max-width: 480px) {
     .contact {
@@ -412,7 +412,6 @@ footer {
         margin: 0;
         overflow-wrap:break-word;
         white-space:normal;
+        font-size: 0.8em;
     }
-    .contact h2 {
-        font: 16px;
-}
+
