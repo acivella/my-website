@@ -400,7 +400,7 @@ footer {
 
 @media (max-width: 480px) {
     .contact {
-        max-width: calc(100% - 10px);
+        max-width: calc(100% - 50px);
         flex-direction: column;
         padding: 0;
         justify-content: center;/* Ensure it fits within the viewport with padding */
