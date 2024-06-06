@@ -388,15 +388,16 @@ footer {
         max-height: 400px; /* Increase maximum height for images on smaller screens */
     }
 
+    .home-gallery-section img {
+        width: fit-content;
+
 }
 
 @media (max-width: 768px) {
-    .contact h2 {
+    .contact {
         max-width: 50%;
         flex-direction: column;
-        padding: 5px;
-        justify-content: center;/* Ensure it fits within the viewport with padding */
-        margin: 0;
+        margin: 10px;
         word-wrap:break-word;
         overflow-wrap: break-word;
         white-space:normal;
@@ -405,12 +406,10 @@ footer {
 
 
 @media (max-width: 480px) {
-    .contact h2 {
+    .contact {
         max-width: 75%;
         flex-direction: column;
-        padding: 5px;
-        justify-content: center;/* Ensure it fits within the viewport with padding */
-        margin: 0;
+        margin: 10px;
          word-wrap:break-word;
         overflow-wrap:break-word;
         white-space:normal;
