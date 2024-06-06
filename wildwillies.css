@@ -396,6 +396,7 @@ footer {
         padding: 5px;
         justify-content: center;/* Ensure it fits within the viewport with padding */
         margin: 0;
+        flex: wrap;
     }
     .contact h2 {
         font: 16px;
@@ -408,7 +409,7 @@ footer {
         padding: 5px;
         justify-content: center;/* Ensure it fits within the viewport with padding */
         margin: 0;
-        overflow: wrap;
+        flex:wrap;
     }
     .contact h2 {
         font: 16px;
