@@ -325,6 +325,27 @@ footer {
         border: none;
     }
 
+    .willie, .memory {
+        justify-self: center;
+        max-height: 50%;
+        max-width: 60%;
+        position: relative; /* Change to relative positioning */
+        top: 25px; /* Reset top property */
+        margin-top: 30px; /* Adjust margin for smaller screens */
+        margin-bottom: -150px;
+    }
+
+    .memory {
+        justify-self: center;
+        max-width: 16%;
+        max-height: 30%;
+        position: absolute;
+        left: -25px; /* Adjust position relative to willie */
+        top: 230px;
+        z-index: 1;
+        margin-bottom: -155px;
+    }
+
     .banner {
         content:url(https://i.postimg.cc/8zTfM9DH/Original-Wild-Willies-1.gif);
         border: none;
@@ -358,6 +379,11 @@ footer {
         max-width: 100%;
     }
 
+    .contact {
+        flex-direction: column; /* Change to column for mobile screens */
+        gap: 5px; /* Adjust gap for mobile */
+    }
+
     .facebook {
         margin-right: 0;
         margin-bottom: 10px;
@@ -367,51 +393,24 @@ footer {
     .facebook,.facebook iframe,
     .testimonials,
     .left,
-    .right,
-    .home-gallery-section img {
+    .right {
         width: 95%; /* Ensure full width on mobile */
         max-width: none; /* Remove max-width restriction */
-        margin:0;
+        margin-left: 0; /* Reset left margin */
+        margin-right: 0; /* Reset right margin */
         vertical-align: center;
-        justify-self: center;
     }
 
 }
 /* Media query for smaller screens */
 @media (max-width: 768px) {
-    .gallery-section,
-    .home-gallery-section {
+    .gallery-section {
         grid-template-columns: 1fr; /* Switch to single column layout */
     }
 
     .gallery-section img {
         max-height: 400px; /* Increase maximum height for images on smaller screens */
     }
-
-    .home-gallery-section img {
-        width: fit-content;
-
 }
 
-@media (max-width: 768px) {
-    .contact {
-        max-width: 50%;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-        gap: 10px;
-        margin: 10px;
-        overflow-wrap:break-word;
-    }
-
-
-@media (max-width: 480px) {
-    .contact {
-        max-width: 75%;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-        margin: 10px;
-        overflow-wrap:break-word;
-    }
 
