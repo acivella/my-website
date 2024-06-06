@@ -382,6 +382,7 @@ footer {
     .contact {
         flex-direction: column; /* Change to column for mobile screens */
         gap: 5px; /* Adjust gap for mobile */
+        max-width: 95%
     }
 
     .facebook {
