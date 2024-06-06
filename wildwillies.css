@@ -397,12 +397,11 @@ footer {
     .contact {
         max-width: 50%;
         flex-direction: column;
+        justify-content: center;
+        align-content: center;
         gap: 10px;
         margin: 10px;
-        word-wrap:break-word;
-        overflow-wrap: break-word;
-        white-space:normal;
-        font-size:0.5em;
+        overflow-wrap:break-word;
     }
 
 
@@ -410,10 +409,9 @@ footer {
     .contact {
         max-width: 75%;
         flex-direction: column;
+        justify-content: center;
+        align-content: center;
         margin: 10px;
-         word-wrap:break-word;
         overflow-wrap:break-word;
-        white-space:normal;
-        font-size: 0.5em;
     }
 
