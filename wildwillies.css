@@ -391,19 +391,23 @@ footer {
 
 @media (max-width: 768px) {
     .contact {
-        max-width: calc(100% - 20px);
+        max-width: 50%;
         flex-direction: column;
-        padding: 0;
+        padding: 5px;
         justify-content: center;/* Ensure it fits within the viewport with padding */
+        margin: 0;
     }
+    .contact h2 {
+        font: 16px;
 }
 
 @media (max-width: 480px) {
     .contact {
-        max-width: calc(100% - 50px);
+        max-width: 50%;
         flex-direction: column;
-        padding: 0;
+        padding: 5px;
         justify-content: center;/* Ensure it fits within the viewport with padding */
+        margin: 0;
     }
     .contact h2 {
         font: 16px;
