@@ -325,27 +325,6 @@ footer {
         border: none;
     }
 
-    .willie, .memory {
-        justify-self: center;
-        max-height: 50%;
-        max-width: 60%;
-        position: relative; /* Change to relative positioning */
-        top: 25px; /* Reset top property */
-        margin-top: 30px; /* Adjust margin for smaller screens */
-        margin-bottom: -150px;
-    }
-
-    .memory {
-        justify-self: center;
-        max-width: 16%;
-        max-height: 30%;
-        position: absolute;
-        left: -25px; /* Adjust position relative to willie */
-        top: 215px;
-        z-index: 1;
-        margin-bottom: -155px;
-    }
-
     .banner {
         content:url(https://i.postimg.cc/8zTfM9DH/Original-Wild-Willies-1.gif);
         border: none;
