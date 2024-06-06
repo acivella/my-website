@@ -397,6 +397,7 @@ footer {
     .contact {
         max-width: 50%;
         flex-direction: column;
+        gap: 10px;
         margin: 10px;
         word-wrap:break-word;
         overflow-wrap: break-word;
