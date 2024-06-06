@@ -304,10 +304,6 @@ h2 {
     margin: 0;
 }
 
-.contact h2 {
-    font: 0.5em;
-}
-
 /* Footer styles */
 footer {
     text-align: center;
@@ -368,6 +364,10 @@ footer {
         margin: 2px;
         align-self: center;
         vertical-align: center;
+    }
+
+    .contact h2 {
+    font: 16px;
     }
 
     .facebook {
