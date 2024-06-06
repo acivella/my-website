@@ -391,14 +391,18 @@ footer {
 
 @media (max-width: 768px) {
     .contact {
-        padding: 10px;
-        max-width: calc(100% - 20px); /* Ensure it fits within the viewport with padding */
+        max-width: calc(100% - 20px);
+        flex-direction: column;
+        padding: 0;
+        justify-content: center;/* Ensure it fits within the viewport with padding */
     }
 }
 
 @media (max-width: 480px) {
     .contact {
-        padding: 5px;
-        max-width: calc(100% - 10px); /* Ensure it fits within the viewport with padding */
+        max-width: calc(100% - 10px);
+        flex-direction: column;
+        padding: 0;
+        justify-content: center;/* Ensure it fits within the viewport with padding */
     }
 }
