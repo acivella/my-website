@@ -393,7 +393,7 @@ footer {
 
 @media (max-width: 480px) {
     .home-gallery-section {
-        padding: 5px; /* Reduce padding */
+        padding: 0px; /* Reduce padding */
     }
 
     .home-gallery-section img {
