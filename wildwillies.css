@@ -397,7 +397,8 @@ footer {
     }
 
     .home-gallery-section img {
-        width: 50%;
+        width: 75%;
+        justify-content: center;
         max-width: 100%;
         height: auto; /* Ensure images scale properly */
     }
