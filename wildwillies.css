@@ -395,7 +395,7 @@ footer {
     .home-gallery-section {
         padding: 0px; /* Reduce padding */
         margin: 2px;
-        gap: 0;
+        gap: 2px;
         align-self: center;
         vertical-align: center;
     }
@@ -407,5 +407,5 @@ footer {
         left: 0;
         right: 0;
         max-width: 100%;
-        height: auto; /* Ensure images scale properly */
+        height: 400px;
     }
