@@ -371,8 +371,7 @@ footer {
     .home-gallery-section img {
         width: 95%; /* Ensure full width on mobile */
         max-width: none; /* Remove max-width restriction */
-        margin-left: 0; /* Reset left margin */
-        margin-right: 0; /* Reset right margin */
+        margin:0;
         vertical-align: center;
         justify-self: center;
     }
@@ -385,33 +384,36 @@ footer {
         grid-template-columns: 1fr; /* Switch to single column layout */
     }
 
-    .gallery-section img, .home-gallery-section {
+    .gallery-section img {
         max-height: 400px; /* Increase maximum height for images on smaller screens */
     }
+
 }
 
 @media (max-width: 768px) {
-    .contact {
+    .contact h2 {
         max-width: 50%;
         flex-direction: column;
         padding: 5px;
         justify-content: center;/* Ensure it fits within the viewport with padding */
         margin: 0;
+        word-wrap:break-word;
         overflow-wrap: break-word;
         white-space:normal;
-        font-size:0.8em;
+        font-size:0.5em;
     }
 
 
 @media (max-width: 480px) {
-    .contact {
+    .contact h2 {
         max-width: 75%;
         flex-direction: column;
         padding: 5px;
         justify-content: center;/* Ensure it fits within the viewport with padding */
         margin: 0;
+         word-wrap:break-word;
         overflow-wrap:break-word;
         white-space:normal;
-        font-size: 0.8em;
+        font-size: 0.5em;
     }
 
