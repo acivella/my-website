@@ -361,11 +361,12 @@ footer {
     .contact {
         flex-direction: column; /* Change to column for mobile screens */
         gap: 5px; /* Adjust gap for mobile */
-        width: 75%; /* Ensure full width on mobile */
+        width: fit-content;
         max-width: none; /* Remove max-width restriction */
         margin-left: 0; /* Reset left margin */
         margin-right: 0; /* Reset right margin */
         vertical-align: center;
+        
     }
 
     .facebook {
