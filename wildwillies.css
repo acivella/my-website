@@ -358,17 +358,6 @@ footer {
         max-width: 100%;
     }
 
-    .contact {
-        flex-direction: column; /* Change to column for mobile screens */
-        gap: 5px; /* Adjust gap for mobile */
-        width: fit-content;
-        max-width: none; /* Remove max-width restriction */
-        margin-left: 0; /* Reset left margin */
-        margin-right: 0; /* Reset right margin */
-        vertical-align: center;
-        
-    }
-
     .facebook {
         margin-right: 0;
         margin-bottom: 10px;
@@ -397,5 +386,19 @@ footer {
 
     .gallery-section img {
         max-height: 400px; /* Increase maximum height for images on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 10px;
+        max-width: calc(100% - 20px); /* Ensure it fits within the viewport with padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 5px;
+        max-width: calc(100% - 10px); /* Ensure it fits within the viewport with padding */
     }
 }
