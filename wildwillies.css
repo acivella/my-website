@@ -349,16 +349,16 @@ footer {
     max-width: 100px;
     max-height: 100px;
     margin-left: 60px;
-    margin-top: 150px;
+    margin-top: 125px;
     z-index: 1;
     overflow: visible;
 }
 .memory {
-    max-width: 50;
-    max-height: 50;
+    max-width: 50px;
+    max-height: 50px;
     position: sticky;
     margin-left: 200px;
-    margin-top: 150px;
+    margin-top: 0px;
     z-index: 1;
     overflow: visible;
 }
