@@ -352,6 +352,7 @@ footer {
     max-height: 100px;
     z-index: 1;
     overflow: visible;
+    transform: translateX(-50%); 
 }
 .memory {
     padding: 0;
@@ -361,6 +362,7 @@ footer {
     max-height: 80px;
     z-index: 1;
     overflow: visible;
+    transform: translateX(-55%); 
 }
 
     .main-content,
