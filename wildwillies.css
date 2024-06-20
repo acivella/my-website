@@ -94,7 +94,7 @@ nav a:hover {
     border-radius: 65%;
     border-color: #dc402f;
     box-shadow: 0 0 20px 10px #dc402f;
-    position: absolute;
+    position: sticky;
     margin-left: 60px;
     margin-top: 240px;
     z-index: 1;
@@ -106,7 +106,7 @@ nav a:hover {
     border-radius: 65%;
     border-color: #dc402f;
     box-shadow: 0 0 25px 5px #dc402f;
-    position: absolute;
+    position: sticky;
     margin-left: 200px;
     margin-top: 305px;
     z-index: 1;
@@ -349,8 +349,8 @@ footer {
     max-width: 100px;
     max-height: 100px;
     object-position: center;
-    margin-top: -50px;
-    margin-right: 45px;
+    margin-top: -10px;
+    margin-right: 60px;
     z-index: 1;
     overflow: visible;
 }
@@ -360,7 +360,7 @@ footer {
     position: sticky;
     vertical-align: right;
     margin-top: -20px;
-    margin-right: 5px;
+    margin-right: 15px;
     margin-bottom: 5px;
     z-index: 1;
     overflow: visible;
