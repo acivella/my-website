@@ -349,7 +349,7 @@ footer {
     flex-direction: column;
     align-items: center;
     position: sticky;
-    top: -40%;
+    top: -75%;
     transform: translateY(-50%); /* Center vertically */
     max-width: 100px;
     max-height: 100px;
@@ -361,7 +361,7 @@ footer {
     flex-direction: column;
     align-items: center;
     position: sticky;
-    top: -90%; /* Center vertically */
+    top: -50px; /* Center vertically */
     transform: translateY(-50%); /* Center vertically */
     max-width: 80px;
     max-height: 80px;
