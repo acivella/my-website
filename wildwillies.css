@@ -345,24 +345,18 @@ footer {
     }
 
 .willie {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 0;
+    margin:0;
     position: sticky;
-    top: -75%;
-    transform: translateY(-50%); /* Center vertically */
     max-width: 100px;
     max-height: 100px;
     z-index: 1;
     overflow: visible;
 }
 .memory {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 0;
+    margin:0;
     position: sticky;
-    top: -50px; /* Center vertically */
-    transform: translateY(-50%); /* Center vertically */
     max-width: 80px;
     max-height: 80px;
     z-index: 1;
