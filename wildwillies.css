@@ -216,6 +216,10 @@ nav a:hover {
     align-self: center;
 }
 
+.eclipse {
+    justify-self: center;
+    align-self: center;
+}
 
 .fbtest {
     display: flex;
