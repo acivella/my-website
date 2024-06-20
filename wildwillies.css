@@ -366,8 +366,9 @@ footer {
         vertical-align: center;
     }
 
-    .contact h2 {
-    font: 16px;
+    .email {
+    font: 14px;
+    flex: wrap;
     }
 
     .facebook {
