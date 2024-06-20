@@ -344,6 +344,21 @@ footer {
         overflow: hidden;
     }
 
+    .willie {
+    position: sticky;
+    margin-left: 60px;
+    margin-top: 240px;
+    z-index: 1;
+    overflow: visible;
+}
+.memory {
+    position: sticky;
+    margin-left: 200px;
+    margin-top: 305px;
+    z-index: 1;
+    overflow: visible;
+}
+
     .main-content,
     .intro-section,
     .fbtest {
