@@ -217,7 +217,7 @@ nav a:hover {
 }
 
 .eclipse img {
-    object-position: 80% 10%; 
+    top: -45; 
 }
 
 .fbtest {
