@@ -94,7 +94,7 @@ nav a:hover {
     border-radius: 65%;
     border-color: #dc402f;
     box-shadow: 0 0 20px 10px #dc402f;
-    position: sticky;
+    position: absolute;
     margin-left: 60px;
     margin-top: 240px;
     z-index: 1;
@@ -106,7 +106,7 @@ nav a:hover {
     border-radius: 65%;
     border-color: #dc402f;
     box-shadow: 0 0 25px 5px #dc402f;
-    position: sticky;
+    position: absolute;
     margin-left: 200px;
     margin-top: 305px;
     z-index: 1;
@@ -342,17 +342,18 @@ footer {
         border-bottom: 5px solid #dc402f;
         border-top: 3px solid #dc402f;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: sticky;
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%); /* Center vertically */
     }
 
 .willie {
     position: sticky;
     max-width: 100px;
     max-height: 100px;
-    object-position: center;
-    margin-top: 0px;
-    margin-bottom: -10px;
-    margin-right: 60px;
-    margin-left: 50px;
     z-index: 1;
     overflow: visible;
 }
@@ -360,10 +361,6 @@ footer {
     max-width: 80px;
     max-height: 80px;
     position: sticky;
-    vertical-align: right;
-    margin-top: -25px;
-    margin-right: 15px;
-    margin-bottom: 15px;
     z-index: 1;
     overflow: visible;
 }
