@@ -349,8 +349,7 @@ footer {
     max-width: 100px;
     max-height: 100px;
     object-position: center;
-    vertical-align: center;
-    align-self: center;
+    margin-top: -200px;
     z-index: 1;
     overflow: visible;
 }
@@ -359,7 +358,9 @@ footer {
     max-height: 80px;
     position: sticky;
     vertical-align: right;
-    margin-top: -50px;
+    margin-top: -200px;
+    margin-right: 5px;
+    bottom-padding: 2px;
     z-index: 1;
     overflow: visible;
 }
