@@ -216,10 +216,8 @@ nav a:hover {
     align-self: center;
 }
 
-.eclipse {
+.eclipse img {
     object-position: 80% 10%; 
-    justify-self: center;
-    align-self: center;
 }
 
 .fbtest {
