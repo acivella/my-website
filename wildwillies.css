@@ -216,8 +216,8 @@ nav a:hover {
     align-self: center;
 }
 
-.eclipse img {
-    top: -45; 
+.eclipse {
+    object-fit: scale-down;
 }
 
 .fbtest {
