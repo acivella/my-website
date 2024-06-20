@@ -346,15 +346,19 @@ footer {
 
     .willie {
     position: sticky;
+    max-width: 100px;
+    max-height: 100px;
     margin-left: 60px;
-    margin-top: 240px;
+    margin-top: 150px;
     z-index: 1;
     overflow: visible;
 }
 .memory {
+    max-width: 50;
+    max-height: 50;
     position: sticky;
     margin-left: 200px;
-    margin-top: 305px;
+    margin-top: 150px;
     z-index: 1;
     overflow: visible;
 }
