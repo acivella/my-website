@@ -367,8 +367,9 @@ footer {
     }
 
     .email {
-    font: 14px;
-    flex: wrap;
+        font: 14px;
+        flex: wrap;
+        width: 50%;
     }
 
     .facebook {
