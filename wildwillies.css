@@ -208,7 +208,7 @@ nav a:hover {
     max-height: 300px; /* Set maximum height for images */
     object-fit: cover; /* Ensure images cover the entire grid cell */
     border-radius: 5px; /* Add rounded corners if desired */
-    object-position: 0% 20%;
+    object-position: 0% 30%;
 }
 
 .willfan {
