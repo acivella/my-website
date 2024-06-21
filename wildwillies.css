@@ -355,7 +355,7 @@ footer {
     transform: translateX(-200%);
     transform: translateY(20%);
     left: 28%;
-    margin-bottom: -3px;
+    padding-top: -3px;
 }
 .memory {
     padding: 0;
