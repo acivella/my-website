@@ -352,8 +352,9 @@ footer {
     max-height: 100px;
     z-index: 1;
     overflow: visible;
-    transform: translateX(200%);
+    transform: translateX(-200%);
     transform: translateY(20%);
+    left: 50%;
 }
 .memory {
     padding: 0;
@@ -363,8 +364,9 @@ footer {
     max-height: 80px;
     z-index: 1;
     overflow: visible;
-    transform: translateX(-50%);
-    transform: translateY(150%);
+    transform: translateX(-150%);
+    transform: translateY(20%);
+    left: 60%;
 }
 
     .main-content,
