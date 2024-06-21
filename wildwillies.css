@@ -365,7 +365,7 @@ footer {
     z-index: 1;
     overflow: visible;
     transform: translateX(-150%);
-    transform: translateY(-10%);
+    transform: translateY(-25%);
     left: 50%;
 }
 
