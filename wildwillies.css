@@ -354,7 +354,8 @@ footer {
     overflow: visible;
     transform: translateX(-200%);
     transform: translateY(20%);
-    left: 30%;
+    left: 28%;
+    top: 2px;
 }
 .memory {
     padding: 0;
