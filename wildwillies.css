@@ -287,6 +287,7 @@ nav a:hover {
 }
 
 .floating-coupons {
+    padding-top: 3px;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -302,7 +303,7 @@ nav a:hover {
     transition: transform 0.3s;
 }
 
-.floating-coupons img:onclick {
+.floating-coupons img:hover {
     transform: scale(3.1);
 }
 
