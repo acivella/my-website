@@ -286,6 +286,26 @@ nav a:hover {
     transform: scale(1.1);
 }
 
+.floating-coupons {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    z-index: 0;
+}
+
+.floating-coupons img {
+    width: 150px;
+    height: 150px;
+    border-radius: 90%;
+    transition: transform 0.3s;
+}
+
+.floating-coupons img:hover {
+    transform: scale(3.1);
+}
+
 h2 {
     font-size: 24px;
     margin-bottom: 10px;
