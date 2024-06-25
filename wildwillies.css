@@ -296,9 +296,9 @@ nav a:hover {
 }
 
 .floating-coupons img {
-    width: 150px;
+    width: 200px;
     height: 150px;
-    border-radius: 90%;
+    border-radius: 50%;
     transition: transform 0.3s;
 }
 
