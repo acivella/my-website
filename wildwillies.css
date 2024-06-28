@@ -381,8 +381,8 @@ footer {
     padding: 0;
     margin:0;
     position: sticky;
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 125px;
+    max-height: 125px;
     z-index: 1;
     overflow: visible;
     transform: translateX(-200%);
@@ -394,8 +394,8 @@ footer {
     padding: 0;
     margin:0;
     position: sticky;
-    max-width: 80px;
-    max-height: 80px;
+    max-width: 100px;
+    max-height: 100px;
     z-index: 1;
     overflow: visible;
     transform: translateX(-150%);
