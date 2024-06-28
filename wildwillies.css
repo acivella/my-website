@@ -386,7 +386,7 @@ footer {
     z-index: 1;
     overflow: visible;
     transform: translateX(-200%);
-    transform: translateY(20%);
+    transform: translateY(10%);
     left: 28%;
     padding-top: -3px;
 }
