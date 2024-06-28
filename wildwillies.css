@@ -399,8 +399,8 @@ footer {
     max-height: 85px;
     z-index: 1;
     overflow: visible;
-    transform: translateX(-150%);
-    transform: translateY(-70%);
+    transform: translateX(-180%);
+    transform: translateY(-90%);
     left: 50%;
 }
 
