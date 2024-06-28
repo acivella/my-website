@@ -395,8 +395,8 @@ footer {
     padding: 0;
     margin:0;
     position: sticky;
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 85px;
+    max-height: 85px;
     z-index: 1;
     overflow: visible;
     transform: translateX(-150%);
