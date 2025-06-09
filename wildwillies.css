@@ -151,6 +151,11 @@ nav a:hover {
     padding: -5px;
     color: #1760ad;
 }
+.top2-intro {
+    vertical-align: center;
+    padding: -5px;
+    color: black;
+}
 .home-text {
     justify-content: center;
     text-align: center;
