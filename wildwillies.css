@@ -148,14 +148,50 @@ nav a:hover {
 }
 .top-intro {
     vertical-align: center;
-    padding: -5px;
+    padding-top: 75px;
     color: #1760ad;
 }
 .top2-intro {
-    vertical-align: center;
-    padding: -5px;
+    vertical-align: left;
+    text-align: left;
     color: black;
+    width:75%;
+    font-size: larger;
 }
+.top2b-intro {
+    vertical-align: left;
+    text-align: left;
+    padding-bottom: 25px;
+    color: black;
+    width:75%;
+    font-size: larger;
+}
+.top3-intro {
+    vertical-align: center;
+    text-align: center;
+    color: black;
+    width: 85%;
+    margin-left: -400px;
+
+}
+
+.bold-word {
+    font-weight: bold;
+}
+
+.willfan1 {
+    width:150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: -550px;
+    margin-top: 75px;
+    border-color: #1760ad;
+    box-shadow: 0 0 25px 5px #1760ad;
+    object-position: 0% -0.5%;
+    align-content: center;
+}
+
 .home-text {
     justify-content: center;
     text-align: center;
@@ -164,6 +200,7 @@ nav a:hover {
     max-width: fit-content;
     padding: 5px;
     margin-bottom: 25px;
+    margin-top: 50px;
 }
 
 .home-text a {
@@ -408,6 +445,21 @@ footer {
     transform: translateY(-20%);
     left: 50%;
 }
+
+    .top2-intro, .top2b-intro, .top3-intro {
+        text-align: center;
+        width: 90%;
+        margin: 15px auto;
+        margin-left: 0;
+    }
+
+    .willfan1 {
+        display: block;
+        margin: 20px auto;
+        transform: none;  /* Remove previous transforms for mobile */
+        left: 0;
+    }
+
 
     .main-content,
     .intro-section,
