@@ -475,6 +475,11 @@ footer {
         max-width: 100%;
     }
 
+    .floating-coupons img {
+        width: 250px;
+        height: 250px;
+    }
+    
     .contact {
         flex-direction: column; /* Change to column for mobile screens */
         gap: 5px; /* Adjust gap for mobile */
