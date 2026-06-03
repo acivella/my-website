@@ -46,7 +46,7 @@
   <button onclick="closeFWPopup()" style="position:absolute;top:14px;right:18px;background:transparent;border:1px solid rgba(255,255,255,0.4);color:#fff;font-size:16px;font-weight:700;width:28px;height:28px;border-radius:50%;cursor:pointer;line-height:1;z-index:10;font-family:'Rubik',sans-serif;">&times;</button>
 
   <div style="position:relative;z-index:2;background:transparent;border:3px solid #ff4400;border-radius:16px;padding:36px 40px;max-width:600px;width:90%;text-align:center;box-shadow:0 0 60px rgba(255,68,0,0.4);">
-    <p style="color:rgba(255,255,255,0.6);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin:0 0 12px;">Scroll down for sound</p>
+    <p style="color:rgba(255,255,255,0.6);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin:0 0 12px;">Click for sound</p>
     <h1 style="color:#FFD700;font-size:clamp(22px,5vw,34px);font-weight:900;margin:0 0 6px;text-transform:uppercase;letter-spacing:2px;text-shadow:0 2px 12px rgba(0,0,0,0.9);">Happy <span style="color:#3399FF;">250th</span> Birthday <span style="color:#FF4400;">America!</span></h1>
     <div style="width:80px;height:4px;background:#ff4400;margin:10px auto 18px;border-radius:2px;"></div>
     <p style="color:#fff;font-size:clamp(14px,3vw,16px);line-height:1.8;margin:0 0 14px;text-shadow:0 2px 6px rgba(0,0,0,0.95);font-weight:600;">It's almost here and things are about to get <strong style="color:#FFD700;font-size:1.1em;">LOUD!</strong></p>
@@ -128,13 +128,10 @@
   function startAudio(){
     if(audioStarted) return;
     audioStarted = true;
+    var hint = document.getElementById('fw-sound-hint');
+    if(hint) hint.style.display = 'none';
     fwAudio.play().catch(function(e){ console.warn('Audio error:', e); });
   }
-
-  window.addEventListener('scroll', function onScroll(){
-    startAudio();
-    window.removeEventListener('scroll', onScroll);
-  });
 
   document.getElementById('fw-overlay').addEventListener('click', startAudio, { once: true });
 
@@ -143,7 +140,6 @@
     fwAudio.pause();
     fwAudio.currentTime = 0;
     fwAudio.src = '';
-    window.removeEventListener('scroll', startAudio);
     var el = document.getElementById('fw-overlay');
     if(el){
       el.style.transition = 'opacity 0.5s';
