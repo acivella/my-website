@@ -43,14 +43,15 @@
     <!-- FIREWORKS POPUP -->
 <div id="fw-overlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.88);z-index:9999;display:flex;align-items:center;justify-content:center;font-family:'Rubik',sans-serif;">
   <canvas id="fw-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;"></canvas>
+  <button onclick="closeFWPopup()" style="position:absolute;top:14px;right:18px;background:transparent;border:1px solid rgba(255,255,255,0.4);color:#fff;font-size:16px;font-weight:700;width:28px;height:28px;border-radius:50%;cursor:pointer;line-height:1;z-index:10;font-family:'Rubik',sans-serif;">&times;</button>
   <div style="position:relative;z-index:2;background:transparent;border:3px solid #ff4400;border-radius:16px;padding:36px 40px;max-width:600px;width:90%;text-align:center;box-shadow:0 0 60px rgba(255,68,0,0.4);">
-    <h1 style="color:#FFD700;font-size:clamp(20px,5vw,30px);font-weight:900;margin:0 0 6px;text-transform:uppercase;letter-spacing:1px;text-shadow:0 2px 8px rgba(0,0,0,0.9);">Happy 250th Birthday America!</h1>
-    <div style="width:60px;height:3px;background:#ff4400;margin:10px auto 16px;border-radius:2px;"></div>
-    <p style="color:#fff;font-size:clamp(13px,3vw,15px);line-height:1.7;margin:0 0 12px;text-shadow:0 2px 6px rgba(0,0,0,0.95);">It's almost here and things are about to get <strong style="color:#FFD700;">LOUD!</strong></p>
-    <p style="color:#fff;font-size:clamp(13px,3vw,15px);line-height:1.7;margin:0 0 12px;text-shadow:0 2px 6px rgba(0,0,0,0.95);"><strong style="color:#ff6633;">Wild Willie's Discount Fireworks (The Original)</strong> at 291 &amp; 58 Highway has an amazing season ahead and we are celebrating in the biggest way yet!</p>
-    <p style="color:#fff;font-size:clamp(13px,3vw,15px);line-height:1.7;margin:0 0 12px;text-shadow:0 2px 6px rgba(0,0,0,0.95);">We are stocked up with the <strong style="color:#FFD700;">biggest selection we have EVER carried</strong> so you can make this Fourth of July one for the history books.</p>
-    <p style="color:#FFD700;font-size:clamp(14px,3.5vw,17px);font-weight:700;margin:0 0 20px;text-shadow:0 2px 6px rgba(0,0,0,0.95);">We open June 20th so stay tuned for exciting things coming this year!!</p>
-    <button onclick="closeFWPopup()" style="background:#ff4400;color:#fff;border:none;padding:14px 40px;font-size:16px;font-weight:700;border-radius:8px;cursor:pointer;text-transform:uppercase;letter-spacing:1px;font-family:'Rubik',sans-serif;">Let's Celebrate!</button>
+    <h1 style="color:#FFD700;font-size:clamp(22px,5vw,34px);font-weight:900;margin:0 0 6px;text-transform:uppercase;letter-spacing:2px;text-shadow:0 2px 12px rgba(0,0,0,0.9);">Happy <span style="color:#3399FF;">250th</span> Birthday <span style="color:#FF4400;">America!</span></h1>
+    <div style="width:80px;height:4px;background:linear-gradient(to right,#FF4400,#FFD700,#3399FF);margin:10px auto 18px;border-radius:2px;"></div>
+    <p style="color:#fff;font-size:clamp(14px,3vw,16px);line-height:1.8;margin:0 0 14px;text-shadow:0 2px 6px rgba(0,0,0,0.95);font-weight:600;">It's almost here and things are about to get <strong style="color:#FFD700;font-size:1.1em;">LOUD!</strong></p>
+    <p style="color:#fff;font-size:clamp(14px,3vw,16px);line-height:1.8;margin:0 0 14px;text-shadow:0 2px 6px rgba(0,0,0,0.95);font-weight:600;"><strong style="color:#3399FF;font-size:1.05em;">Wild Willie's Discount Fireworks (The Original)</strong> at <strong style="color:#FFD700;">291 &amp; 58 Highway</strong> has an amazing season ahead and we are celebrating in the biggest way yet!</p>
+    <p style="color:#fff;font-size:clamp(14px,3vw,16px);line-height:1.8;margin:0 0 14px;text-shadow:0 2px 6px rgba(0,0,0,0.95);font-weight:600;">We are stocked up with the <strong style="color:#FF4400;font-size:1.05em;">biggest selection we have EVER carried</strong> so you can make this <strong style="color:#FFD700;">Fourth of July</strong> one for the history books.</p>
+    <p style="color:#3399FF;font-size:clamp(15px,3.5vw,19px);font-weight:900;margin:0 0 24px;text-shadow:0 2px 8px rgba(0,0,0,0.95);text-transform:uppercase;letter-spacing:1px;">We open <span style="color:#FFD700;">June 20th</span> so stay tuned for exciting things coming this year!!</p>
+    <button onclick="closeFWPopup()" style="background:#ff4400;color:#fff;border:3px solid #FFD700;padding:16px 48px;font-size:17px;font-weight:900;border-radius:8px;cursor:pointer;text-transform:uppercase;letter-spacing:2px;font-family:'Rubik',sans-serif;box-shadow:0 0 20px rgba(255,68,0,0.6);">Let's Celebrate!</button>
   </div>
 </div>
 
@@ -65,7 +66,7 @@
   resize();
   window.addEventListener('resize',resize);
 
-  var COLORS=['#FFD700','#FF4400','#FF0000','#FFFFFF','#00BFFF','#FF69B4','#FF6600','#FFE44D'];
+  var COLORS=['#FFD700','#FF4400','#FF0000','#FFFFFF','#0066FF','#3399FF','#00BFFF','#FF6600','#FFE44D','#4488FF','#FF69B4'];
 
   function Particle(x,y,color){
     this.x=x; this.y=y; this.color=color;
@@ -107,21 +108,49 @@
 
   var AudioCtx=window.AudioContext||window.webkitAudioContext;
   var actx=null;
+
   function playBoom(){
     try{
       if(!actx) actx=new AudioCtx();
-      var buf=actx.createBuffer(1,actx.sampleRate*0.4,actx.sampleRate);
+      var sr=actx.sampleRate;
+
+      var bufLen=sr*0.6;
+      var buf=actx.createBuffer(1,bufLen,sr);
       var data=buf.getChannelData(0);
-      for(var i=0;i<data.length;i++) data[i]=(Math.random()*2-1)*Math.pow(1-i/data.length,1.5);
+
+      for(var i=0;i<bufLen;i++){
+        var t=i/sr;
+        var env=Math.exp(-t*8);
+        var noise=(Math.random()*2-1);
+        var lowThud=Math.sin(2*Math.PI*60*t)*Math.exp(-t*12);
+        data[i]=(noise*0.6+lowThud*0.8)*env;
+      }
+
       var src=actx.createBufferSource();
       src.buffer=buf;
+
+      var lowpass=actx.createBiquadFilter();
+      lowpass.type='lowpass';
+      lowpass.frequency.setValueAtTime(800,actx.currentTime);
+      lowpass.frequency.exponentialRampToValueAtTime(200,actx.currentTime+0.3);
+
       var gain=actx.createGain();
-      gain.gain.setValueAtTime(0.22,actx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001,actx.currentTime+0.4);
-      src.connect(gain); gain.connect(actx.destination);
+      gain.gain.setValueAtTime(0.5,actx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001,actx.currentTime+0.6);
+
+      src.connect(lowpass);
+      lowpass.connect(gain);
+      gain.connect(actx.destination);
       src.start();
     }catch(e){}
   }
+
+  document.addEventListener('click', function initAudio(){
+    if(!actx){
+      try{ actx=new (window.AudioContext||window.webkitAudioContext)(); }catch(e){}
+    }
+    document.removeEventListener('click', initAudio);
+  }, {once:true});
 
   window.closeFWPopup=function(){
     var el=document.getElementById('fw-overlay');
