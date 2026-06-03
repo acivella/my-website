@@ -44,6 +44,7 @@
 <div id="fw-overlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.55);z-index:9999;display:flex;align-items:center;justify-content:center;font-family:'Rubik',sans-serif;">
   <canvas id="fw-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;"></canvas>
   <button onclick="closeFWPopup()" style="position:absolute;top:14px;right:18px;background:transparent;border:1px solid rgba(255,255,255,0.4);color:#fff;font-size:16px;font-weight:700;width:28px;height:28px;border-radius:50%;cursor:pointer;line-height:1;z-index:10;font-family:'Rubik',sans-serif;">&times;</button>
+
   <div style="position:relative;z-index:2;background:transparent;border:3px solid #ff4400;border-radius:16px;padding:36px 40px;max-width:600px;width:90%;text-align:center;box-shadow:0 0 60px rgba(255,68,0,0.4);">
     <h1 style="color:#FFD700;font-size:clamp(22px,5vw,34px);font-weight:900;margin:0 0 6px;text-transform:uppercase;letter-spacing:2px;text-shadow:0 2px 12px rgba(0,0,0,0.9);">Happy <span style="color:#3399FF;">250th</span> Birthday <span style="color:#FF4400;">America!</span></h1>
     <div style="width:80px;height:4px;background:#ff4400;margin:10px auto 18px;border-radius:2px;"></div>
@@ -51,90 +52,105 @@
     <p style="color:#fff;font-size:clamp(14px,3vw,16px);line-height:1.8;margin:0 0 14px;text-shadow:0 2px 6px rgba(0,0,0,0.95);font-weight:600;"><strong style="color:#3399FF;font-size:1.05em;">Wild Willie's Discount Fireworks (The Original)</strong> at <strong style="color:#FFD700;">291 &amp; 58 Highway</strong> has an amazing season ahead and we are celebrating in the biggest way yet!</p>
     <p style="color:#fff;font-size:clamp(14px,3vw,16px);line-height:1.8;margin:0 0 14px;text-shadow:0 2px 6px rgba(0,0,0,0.95);font-weight:600;">We are stocked up with the <strong style="color:#FF4400;font-size:1.05em;">biggest selection we have EVER carried</strong> so you can make this <strong style="color:#FFD700;">Fourth of July</strong> one for the history books.</p>
     <p style="color:#3399FF;font-size:clamp(15px,3.5vw,19px);font-weight:900;margin:0 0 24px;text-shadow:0 2px 8px rgba(0,0,0,0.95);text-transform:uppercase;letter-spacing:1px;">We open <span style="color:#FFD700;">June 20th</span> so stay tuned for exciting things coming this year!!</p>
-    <button onclick="closeFWPopup()" style="background:#ff4400;color:#fff;border:3px solid #FFD700;padding:16px 48px;font-size:17px;font-weight:900;border-radius:8px;cursor:pointer;text-transform:uppercase;letter-spacing:2px;font-family:'Rubik',sans-serif;box-shadow:0 0 20px rgba(255,68,0,0.6);">Let's Celebrate!</button>
+    <button id="fw-celebrate-btn" style="background:#ff4400;color:#fff;border:3px solid #FFD700;padding:16px 48px;font-size:17px;font-weight:900;border-radius:8px;cursor:pointer;text-transform:uppercase;letter-spacing:2px;font-family:'Rubik',sans-serif;box-shadow:0 0 20px rgba(255,68,0,0.6);">Let's Celebrate!</button>
   </div>
 </div>
 
 <script>
 (function(){
-  var canvas=document.getElementById('fw-canvas');
-  var ctx=canvas.getContext('2d');
-  var particles=[];
-  var W,H;
 
-  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+  var fwAudio = new Audio('fireworks.mp3');
+  fwAudio.volume = 0.8;
+  fwAudio.preload = 'auto';
+
+  fwAudio.addEventListener('timeupdate', function(){
+    if(fwAudio.currentTime >= 21){
+      fwAudio.currentTime = 0;
+    }
+  });
+
+  var canvas = document.getElementById('fw-canvas');
+  var ctx = canvas.getContext('2d');
+  var particles = [];
+  var W, H;
+  var animating = true;
+
+  function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
   resize();
-  window.addEventListener('resize',resize);
+  window.addEventListener('resize', resize);
 
-  var COLORS=['#FFD700','#FF4400','#FF0000','#FFFFFF','#0066FF','#3399FF','#00BFFF','#FF6600','#FFE44D','#4488FF','#FF69B4'];
+  var COLORS = ['#FFD700','#FF4400','#FF0000','#FFFFFF','#0066FF','#3399FF','#00BFFF','#FF6600','#FFE44D','#4488FF','#FF69B4'];
 
-  function Particle(x,y,color){
-    this.x=x; this.y=y; this.color=color;
-    var angle=Math.random()*Math.PI*2;
-    var speed=Math.random()*6+2;
-    this.vx=Math.cos(angle)*speed;
-    this.vy=Math.sin(angle)*speed;
-    this.alpha=1; this.decay=Math.random()*0.015+0.012;
-    this.radius=Math.random()*2.5+1;
-    this.gravity=0.08;
+  function Particle(x, y, color){
+    this.x = x; this.y = y; this.color = color;
+    var angle = Math.random() * Math.PI * 2;
+    var speed = Math.random() * 6 + 2;
+    this.vx = Math.cos(angle) * speed;
+    this.vy = Math.sin(angle) * speed;
+    this.alpha = 1;
+    this.decay = Math.random() * 0.015 + 0.012;
+    this.radius = Math.random() * 2.5 + 1;
+    this.gravity = 0.08;
   }
 
   function burst(){
-    var x=Math.random()*W*0.8+W*0.1;
-    var y=Math.random()*H*0.5+H*0.05;
-    var color=COLORS[Math.floor(Math.random()*COLORS.length)];
-    var count=Math.floor(Math.random()*60)+60;
-    for(var i=0;i<count;i++) particles.push(new Particle(x,y,color));
+    var x = Math.random() * W * 0.8 + W * 0.1;
+    var y = Math.random() * H * 0.5 + H * 0.05;
+    var color = COLORS[Math.floor(Math.random() * COLORS.length)];
+    var count = Math.floor(Math.random() * 60) + 60;
+    for(var i = 0; i < count; i++) particles.push(new Particle(x, y, color));
   }
 
   function loop(){
-    if(!document.getElementById('fw-overlay')) return;
-    ctx.fillStyle='rgba(0,0,0,0.18)';
-    ctx.fillRect(0,0,W,H);
-    for(var i=particles.length-1;i>=0;i--){
-      var p=particles[i];
-      p.vy+=p.gravity; p.x+=p.vx; p.y+=p.vy; p.alpha-=p.decay;
-      if(p.alpha<=0){particles.splice(i,1);continue;}
-      ctx.save(); ctx.globalAlpha=p.alpha;
-      ctx.beginPath(); ctx.arc(p.x,p.y,p.radius,0,Math.PI*2);
-      ctx.fillStyle=p.color; ctx.fill(); ctx.restore();
+    if(!animating) return;
+    ctx.fillStyle = 'rgba(0,0,0,0.18)';
+    ctx.fillRect(0, 0, W, H);
+    for(var i = particles.length - 1; i >= 0; i--){
+      var p = particles[i];
+      p.vy += p.gravity; p.x += p.vx; p.y += p.vy; p.alpha -= p.decay;
+      if(p.alpha <= 0){ particles.splice(i, 1); continue; }
+      ctx.save(); ctx.globalAlpha = p.alpha;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = p.color; ctx.fill(); ctx.restore();
     }
     requestAnimationFrame(loop);
   }
 
   burst(); loop();
-  var bInterval=setInterval(function(){
-    if(document.getElementById('fw-overlay')) burst();
+  var bInterval = setInterval(function(){
+    if(animating) burst();
     else clearInterval(bInterval);
-  },900);
+  }, 900);
 
-  var fwAudio=new Audio('fireworks.mp3');
-  fwAudio.volume=0.8;
+  var audioStarted = false;
 
-  fwAudio.addEventListener('timeupdate',function(){
-    if(fwAudio.currentTime>=21){
-      fwAudio.currentTime=0;
-      fwAudio.play();
-    }
-  });
+  function startAudio(){
+    if(audioStarted) return;
+    audioStarted = true;
+    fwAudio.play().catch(function(e){ console.warn('Audio error:', e); });
+  }
 
-  var unlocked=false;
-  document.addEventListener('click',function unlock(){
-    if(!unlocked){
-      unlocked=true;
-      fwAudio.play().catch(function(){});
-    }
-    document.removeEventListener('click',unlock);
-  },{once:true});
+  document.getElementById('fw-overlay').addEventListener('click', startAudio, { once: true });
 
-  window.closeFWPopup=function(){
+  function closePopup(){
+    animating = false;
     fwAudio.pause();
-    fwAudio.currentTime=0;
-    var el=document.getElementById('fw-overlay');
-    if(el){ el.style.transition='opacity 0.5s'; el.style.opacity='0'; setTimeout(function(){el.remove();},500); }
-  };
+    fwAudio.currentTime = 0;
+    fwAudio.src = '';
+    var el = document.getElementById('fw-overlay');
+    if(el){
+      el.style.transition = 'opacity 0.5s';
+      el.style.opacity = '0';
+      setTimeout(function(){ el.remove(); }, 500);
+    }
+  }
+
+  document.getElementById('fw-celebrate-btn').addEventListener('click', closePopup);
+  window.closeFWPopup = closePopup;
+
 })();
 </script>
+<!-- END FIREWORKS POPUP -->
 <!-- END FIREWORKS POPUP -->
     <header>
         <nav>
