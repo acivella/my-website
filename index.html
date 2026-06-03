@@ -41,7 +41,7 @@
 
 <body>
 <!-- FIREWORKS POPUP -->
-<div id="fw-overlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.45);z-index:9999;display:flex;align-items:center;justify-content:center;font-family:'Rubik',sans-serif;">
+<div id="fw-overlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.55);z-index:9999;display:flex;align-items:center;justify-content:center;font-family:'Rubik',sans-serif;">
   <canvas id="fw-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;"></canvas>
   <button onclick="closeFWPopup()" style="position:absolute;top:14px;right:18px;background:transparent;border:1px solid rgba(255,255,255,0.4);color:#fff;font-size:16px;font-weight:700;width:28px;height:28px;border-radius:50%;cursor:pointer;line-height:1;z-index:10;font-family:'Rubik',sans-serif;">&times;</button>
   <div style="position:relative;z-index:2;background:transparent;border:3px solid #ff4400;border-radius:16px;padding:36px 40px;max-width:600px;width:90%;text-align:center;box-shadow:0 0 60px rgba(255,68,0,0.4);">
@@ -103,37 +103,33 @@
   }
 
   burst(); loop();
-  var bInterval=setInterval(function(){if(document.getElementById('fw-overlay'))burst();else clearInterval(bInterval);},900);
-
-  var sounds=[
-    'https://www.soundjay.com/fireworks/sounds/fireworks-01.mp3',
-    'https://www.soundjay.com/fireworks/sounds/fireworks-02.mp3',
-    'https://www.soundjay.com/fireworks/sounds/fireworks-03.mp3'
-  ];
-
-  var audioUnlocked=false;
-  var pendingPlay=false;
-
-  function playFirework(){
-    if(!audioUnlocked){ pendingPlay=true; return; }
-    var src=sounds[Math.floor(Math.random()*sounds.length)];
-    var a=new Audio(src);
-    a.volume=0.6;
-    a.play().catch(function(){});
-  }
-
-  document.addEventListener('click',function unlock(){
-    audioUnlocked=true;
-    document.removeEventListener('click',unlock);
-    if(pendingPlay) playFirework();
-  },{once:true});
-
-  var sInterval=setInterval(function(){
-    if(document.getElementById('fw-overlay')) playFirework();
-    else clearInterval(sInterval);
+  var bInterval=setInterval(function(){
+    if(document.getElementById('fw-overlay')) burst();
+    else clearInterval(bInterval);
   },900);
 
+  var fwAudio=new Audio('fireworks.mp3');
+  fwAudio.volume=0.8;
+
+  fwAudio.addEventListener('timeupdate',function(){
+    if(fwAudio.currentTime>=21){
+      fwAudio.currentTime=0;
+      fwAudio.play();
+    }
+  });
+
+  var unlocked=false;
+  document.addEventListener('click',function unlock(){
+    if(!unlocked){
+      unlocked=true;
+      fwAudio.play().catch(function(){});
+    }
+    document.removeEventListener('click',unlock);
+  },{once:true});
+
   window.closeFWPopup=function(){
+    fwAudio.pause();
+    fwAudio.currentTime=0;
     var el=document.getElementById('fw-overlay');
     if(el){ el.style.transition='opacity 0.5s'; el.style.opacity='0'; setTimeout(function(){el.remove();},500); }
   };
